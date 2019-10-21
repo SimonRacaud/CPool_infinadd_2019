@@ -25,9 +25,9 @@ char *create_res_str(char const *str1, char const *str2)
     return (res);
 }
 
-int is_pos_num(char const *c)
+int is_pos_num(char c)
 {
-    if (*c <= '9' && *c >= '1')
+    if (c <= '9' && c >= '1')
         return (1);
     return (0);
 }
@@ -73,9 +73,9 @@ void treat_digit(char *res, char const *d1, char const *d2, int *carriedNum)
 {
     int new_carriedNb = 0;
 
-    if (!is_pos_num(d1)) {
+    if (!is_pos_num(*d1)) {
         *res = *d2;
-    } else if (!is_pos_num(d2)) {
+    } else if (!is_pos_num(*d2)) {
         *res = *d1;
     } else {
         if (*d1 + (*d2 - '0') <= '9') {
@@ -109,7 +109,14 @@ void calcul_add(char *res, char *str1, char *str2)
 
 void display_res(char *res)
 {
-    my_putstr(res);
+    int first_digit = 0;
+    my_putstr(res);my_putchar('\n'); // DEBUG
+    for (int i = 0; i < my_strlen(res); i++) {
+        if (first_digit == 0 && is_pos_num(res[i]))
+            first_digit = 1;
+        if (first_digit || res[i] == '-')
+            my_putchar(res[i]);
+    }
     my_putchar('\n');
 }
 
