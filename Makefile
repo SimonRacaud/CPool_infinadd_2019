@@ -6,6 +6,8 @@
 ##
 
 SRC	=	infinadd.c \
+		base.c \
+		calcul.c \
 		main.c
 
 OBJ	=	$(SRC:.c=.o)
