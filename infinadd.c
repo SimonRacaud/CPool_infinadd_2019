@@ -45,7 +45,7 @@ void display_res(char *res)
     int first_digit = 0;
 
     for (int i = 0; i < my_strlen(res); i++) {
-        if (first_digit == 0 && is_pos_num(res[i]))
+        if ((first_digit == 0 && is_pos_num(res[i])) || res[i + 1] == '\0')
             first_digit = 1;
         if (first_digit || res[i] == '-')
             my_putchar(res[i]);

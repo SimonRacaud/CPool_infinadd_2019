@@ -90,6 +90,6 @@ void calcul(char *res, char *str1, char *str2, int is_add)
         res[1] = '1';
     else
         res[1] = '*';
-    res[longestNb + 3] = '\0';
+    res[longestNb + 2] = '\0';
     apply_symbol(&res[0], str1, str2);
 }
