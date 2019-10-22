@@ -24,9 +24,9 @@ void treat_digit_add(char *res, char const *d1, char const *d2, int *carriedNum)
 {
     int new_carriedNb = 0;
 
-    if (!is_pos_num(*d1)) {
+    if (!is_pos_num(*d1) && *d2 != '\0') {
         *res = *d2;
-    } else if (!is_pos_num(*d2)) {
+    } else if (!is_pos_num(*d2) && *d1 != '\0') {
         *res = *d1;
     } else {
         if (*d1 + (*d2 - '0') <= '9') {
