@@ -1,4 +1,6 @@
 # CPool_infinadd_2019
+Epitech's first-year project.
+
 Compute the sum between two infinite numbers. (without size limitation)
 
 # Marks Epitech
